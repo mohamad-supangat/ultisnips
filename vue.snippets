@@ -30,6 +30,22 @@ Layout
 </template>
 <script setup>
 import Layout from "../layouts/panel.vue";
+import { ref } from "vue";
+
 </script>
 
+endsnippet
+
+snippet import-scripts-helper "Imporrt base script helper" b
+import { api, toast, moment } from "@/scripts";
+endsnippet
+
+snippet useQuasar "useQuasar" b
+import { useQuasar } from "quasar";
+
+const \$q = useQuasar();
+endsnippet
+
+snippet import-vue "import ref vue" b
+import { ref } from 'vue';
 endsnippet
