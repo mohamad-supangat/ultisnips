@@ -24,32 +24,12 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet template-pug-page "Empty Pug Page" b
-<template lang="pug">
-Layout
-</template>
-<script setup>
-import Layout from "../layouts/panel.vue";
-import { ref } from "vue";
+snippet request-name-action "request-name-action" b
 
-</script>
-
+	Route::post('action', [${1}, 'action'\])
+		->name('action');
 endsnippet
 
-snippet import-scripts-helper "Imporrt base script helper" b
-import { api, toast, moment } from "@/scripts";
-endsnippet
-
-snippet useQuasar "useQuasar" b
-import { useQuasar } from "quasar";
-
-const \$q = useQuasar();
-endsnippet
-
-snippet import-vue "import ref vue" b
-import { ref } from 'vue';
-endsnippet
-
-snippet importSelectClassComponent "importSelectClassComponent" b
-import SelectClass from "@Student/views/components/SelectSchoolClass.vue";
+snippet responseJson "responseJson" b
+response()->json(${1})
 endsnippet
