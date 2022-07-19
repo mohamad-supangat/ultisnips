@@ -61,3 +61,11 @@ endsnippet
 snippet console.log "Console Log" b
 console.log(${1});
 endsnippet
+
+snippet dialogQuasar "dialogQuasar" b
+\$q.dialog({
+component: ${1},
+}).onOk(() => {
+datatable.value.refresh();
+});
+endsnippet
