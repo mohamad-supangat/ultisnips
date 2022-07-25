@@ -69,3 +69,34 @@ component: ${1},
 datatable.value.refresh();
 });
 endsnippet
+snippet templateDialogQuasar "templateDialogQuasar" b
+<template lang="pug">
+q-dialog(ref='dialogRef' @hide='onDialogHide')
+	q-card.q-dialog-plugin
+		q-card-section
+			div.text-h5 ${1}
+
+		q-card-actions(align='right')
+			q-btn(color='primary' label='OK' @click='onOKClick')
+			q-btn(color='primary' label='Cancel' @click='onDialogCancel')
+</template>
+
+<script setup>
+import { useDialogPluginComponent } from "quasar";
+
+const props = defineProps({});
+
+defineEmits([...useDialogPluginComponent.emits]);
+
+const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } =
+useDialogPluginComponent();
+function onOKClick() {
+onDialogOK();
+}
+</script>
+
+endsnippet
+
+snippet qinput "Qinput" b
+q-input(:label="__(${1})" v-model=""  hint="" :rules="[\$rules.required()]" v-uppercase stack-label)
+endsnippet
